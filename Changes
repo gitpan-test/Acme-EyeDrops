@@ -469,3 +469,25 @@ Revision history for Perl extension EyeDrops
 	- fixed rt #39035 "The Acme-EyeDrops Archive Contains World-Writable files"
 	- documentation: updated "99 Bottles of Beer" section with one stroke golf
 	  improvement to mtve/thospel original shortest solution
+
+1.60	Sat May 12 23:59:42 2012
+
+	- Bug fix release for upcoming Perl 5.16.0
+	- Dropped support for Perl 5.005; A::E now requires Perl 5.6 or higher
+	- Clarified Acme::EyeDrops license (thanks Jotam Jr. Trejo)
+	    LICENSE and README were inconsistent with META.yml
+	    all should be consistent now
+	- minor code improvements for perl 5.6+ requirement:
+	    added "use warnings" to EyeDrops.pm
+	    use lexical file handles now
+	    can use readline() function now
+	- documentation: removed "A Slow Day" section
+	- documentation: added new "Victoria Bra, Secret Tango" section
+	- new shape: bra
+	- new shape: spider
+	- 01_mug.t: fixed rt #72163: perl -Mstrict -e 'open$['
+	  'Can't use string ("0") as a symbol ref while "strict refs" in use'
+	  This seems to be a long-standing perl bug fixed in 5.16
+	  Fixed test simply by removing -Mstrict in 01_mug.t
+	- 16_astride.t: threads test, adjusted to avoid annoying
+	  "Tests out of sequence" failure reports from CPAN testers

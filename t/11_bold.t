@@ -1,8 +1,6 @@
 #!/usr/bin/perl
 # 11_bold.t (was vshape.t)
-# This tests OK as taint-safe (i.e. with -Tw added to first line above)
-# with recent versions of Perl, but not with Perl 5.005, which complains
-# it cannot locate Acme/EyeDrops.pm in @INC.
+# This tests OK as taint-safe (i.e. with -Tw added to first line above).
 
 use strict;
 use Acme::EyeDrops qw(get_eye_string get_eye_shapes

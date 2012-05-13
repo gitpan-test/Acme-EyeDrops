@@ -1,5 +1,5 @@
 ===========================================================================
-                 Release of version 1.55 of Acme::EyeDrops
+                 Release of version 1.60 of Acme::EyeDrops
 ===========================================================================
 
 NAME
@@ -39,16 +39,20 @@ INSTALLATION
     file and *.eye files in the appropriate local sub-directory.
 
     This module should work on all Windows and Unix variants for
-    Perl 5.005_03 and above, but is untested on other platforms.
+    Perl 5.6 and above, but is untested on other platforms.
 
 AUTHOR
     Andrew Savige
 
 COPYRIGHT
-    Copyright (c) 2001-2008, Andrew Savige. All Rights Reserved.
-    This module is free software. It may be used, redistributed
-    and/or modified under the terms of the Perl Artistic License
-    (see http://www.perl.com/perl/misc/Artistic.html).
+    Copyright (c) 2001-2012 Andrew Savige. All rights reserved.
+
+    This program is free software; you can redistribute it and/or
+    modify it under the same terms as Perl itself.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 ===========================================================================
 

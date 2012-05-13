@@ -32,6 +32,8 @@ lib/Acme/EyeDrops/bottle2.eye
 lib/Acme/EyeDrops/bottle2.eyp
 lib/Acme/EyeDrops/bottle3.eye
 lib/Acme/EyeDrops/bottle3.eyp
+lib/Acme/EyeDrops/bra.eye
+lib/Acme/EyeDrops/bra.eyp
 lib/Acme/EyeDrops/buffy.eye
 lib/Acme/EyeDrops/buffy.eyp
 lib/Acme/EyeDrops/buffy2.eye
@@ -170,6 +172,8 @@ lib/Acme/EyeDrops/smiley3.eye
 lib/Acme/EyeDrops/smiley3.eyp
 lib/Acme/EyeDrops/snow.eye
 lib/Acme/EyeDrops/snow.eyp
+lib/Acme/EyeDrops/spider.eye
+lib/Acme/EyeDrops/spider.eyp
 lib/Acme/EyeDrops/spoon.eye
 lib/Acme/EyeDrops/spoon.eyp
 lib/Acme/EyeDrops/tonick.eye

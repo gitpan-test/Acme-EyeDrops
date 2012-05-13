@@ -34,7 +34,7 @@ CAMEL_GREETING
 my $m = Module::Build->new(
    module_name =>     'Acme::EyeDrops',
    license =>         'perl',
-   requires =>        { 'perl' => '5.005_03' },
+   requires =>        { 'perl' => '5.006' },
    build_requires =>  { 'Module::Build' => 0.26 }
 );
 $m->add_build_element('eye');

@@ -63,7 +63,8 @@ $camelprogstr =~ tr/!-~/#/;
 #     my $x = qr{ ... (??{ $x }) ... };
 #   will now (correctly) fail under use strict.
 #   (As the inner $x is and has always referred to $::x)
-my $outstr = `$^X -w $tmpf`;
+# This one used to be OK with -w but not as of perl 5.16.0.
+my $outstr = `$^X $tmpf`;
 my $rc = $? >> 8;
 $rc == 0 or print "not ";
 ++$itest; print "ok $itest - 12032 camels rc\n";
@@ -119,8 +120,8 @@ $buffyprogstr =~ tr/!-~/#/;
 
 # -------------------------------------------------
 
-# This one is OK with -Mstrict
-$outstr = `$^X -w -Mstrict $tmpf`;
+# This one used to be OK with -Mstrict but not as of perl 5.16.0.
+$outstr = `$^X -w $tmpf`;
 $rc = $? >> 8;
 $rc == 0 or print "not ";
 ++$itest; print "ok $itest - buffy rc\n";
