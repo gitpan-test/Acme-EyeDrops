@@ -18,7 +18,7 @@ Options:
   -z string       Specify a string instead of a file.
   -c string       String used with -s banner above.
   -p              Print instead of eval.
-  -r              Insert sightly into a regex (instead of eval).
+  -r [123]        Regex attribute. Insert sightly into a regex.
   -m              Use compact sightly encoding.
   -t              Pour unsightly text.
   -u textfiller   Filler for -t option.
@@ -45,7 +45,7 @@ Examples:
   sightly -s camel -f myprog.pl >myprog2.pl
      This creates myprog2.pl, equivalent to the original
      myprog.pl, but prettier and shaped like a camel.
-  sightly -pr -s window -z "Bill Gates is a pest!\n" >bill.pl
+  sightly -p -r 1 -s window -z "Bill Gates is a pest!\n" >bill.pl
      This creates bill.pl, a program that prints the above string.
   sightly -g 3 -bps camel,mongers -f some_binary_file >eyesore
      This creates eyesore, a sightly-encoded file.
@@ -98,7 +98,7 @@ my %optarg = (
 
 usage() unless @ARGV;
 my %arg = (); my %option = ();
-Getopt::Std::getopts("hbeiklmprtERTWa:c:d:f:g:n:o:s:u:U:v:w:x:y:z:", \%option)
+Getopt::Std::getopts("hbeiklmptERTWa:c:d:f:g:n:o:r:s:u:U:v:w:x:y:z:", \%option)
    or usage();
 usage() if $option{h};
 $option{l} and list_shapes(),exit(0);

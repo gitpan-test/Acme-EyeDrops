@@ -72,6 +72,7 @@ $outstr eq $camelprogstr or print "not ";
 ++$itest; print "ok $itest - 12032 camels shape\n";
 $outstr =~ s/^ //mg;
 $outstr =~ s/ +$//mg;
+$outstr =~ s/^.+\n// if $] >= 5.017;   # remove leading use re 'eval' line
 $outstr =~ s/\n//; chop $outstr;
 $outstr eq $camelstr or print "not ";
 ++$itest; print "ok $itest - 12032 camels shape trail\n";
@@ -129,6 +130,7 @@ $outstr =~ tr/!-~/#/;
 $outstr eq $buffyprogstr and print "not ";
 ++$itest; print "ok $itest - buffy shape\n";
 $outstr =~ s/ +$//mg;
+$outstr =~ s/^.+\n// if $] >= 5.017;   # remove leading use re 'eval' line
 $outstr eq $buffymirrorstr or print "not ";
 ++$itest; print "ok $itest - buffy shape mirror\n";
 

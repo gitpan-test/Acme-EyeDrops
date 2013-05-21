@@ -78,6 +78,7 @@ scalar(@lines) > 6 or print "not ";
 pop(@lines);pop(@lines);pop(@lines);
 shift(@lines);shift(@lines);shift(@lines);
 $prog = join("", @lines);
+$prog =~ s/^.+\n// if $] >= 5.017;   # remove leading use re 'eval' line
 $prog =~ s/^## //mg; $prog =~ s/ ##$//mg; $prog =~ s/ +$//mg;
 $prog eq $camelstr or print "not ";
 ++$itest; print "ok $itest\n";
@@ -111,6 +112,7 @@ scalar(@lines) > 6 or print "not ";
 pop(@lines);pop(@lines);pop(@lines);
 shift(@lines);shift(@lines);shift(@lines);
 $prog = join("", @lines);
+$prog =~ s/^.+\n// if $] >= 5.017;   # remove leading use re 'eval' line
 $prog =~ s/^## //mg; $prog =~ s/ ##$//mg; $prog =~ s/ +$//mg;
 $prog eq $camelstr or print "not ";
 ++$itest; print "ok $itest\n";
@@ -139,6 +141,7 @@ scalar(@lines) > 6 or print "not ";
 pop(@lines);pop(@lines);pop(@lines);
 shift(@lines);shift(@lines);shift(@lines);
 $prog = join("", @lines);
+$prog =~ s/^.+\n// if $] >= 5.017;   # remove leading use re 'eval' line
 $prog =~ s/^## //mg; $prog =~ s/ ##$//mg; $prog =~ s/ +$//mg;
 $prog eq $camel2str or print "not ";
 ++$itest; print "ok $itest\n";

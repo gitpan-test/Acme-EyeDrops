@@ -47,6 +47,7 @@ $rc == 0 or print "not ";
 $outstr eq "hello world\n" or print "not ";
 ++$itest; print "ok $itest - twice output\n";
 $prog =~ tr/!-~/#/;
+$prog =~ s/^.+\n// if $] >= 5.017;   # remove leading use re 'eval' line
 $prog eq $camelstr or print "not ";
 ++$itest; print "ok $itest - twice shape\n";
 

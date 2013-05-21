@@ -49,6 +49,7 @@ sub test_one {
    $outstr eq $ostr or print "not ";
    ++$itest; print "ok $itest - $e output\n";
    $prog =~ tr/!-~/#/;
+   $prog =~ s/^.+\n// if $] >= 5.017;   # remove leading use re 'eval' line
    $prog eq $sh or print "not ";
    ++$itest; print "ok $itest - $e shape\n";
 }

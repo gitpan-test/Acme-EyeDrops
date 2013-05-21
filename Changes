@@ -491,3 +491,16 @@ Revision history for Perl extension EyeDrops
 	  Fixed test simply by removing -Mstrict in 01_mug.t
 	- 16_astride.t: threads test, adjusted to avoid annoying
 	  "Tests out of sequence" failure reports from CPAN testers
+
+1.61	Mon May 20 21:59:42 2013
+
+	- Bug fix release for Perl 5.18.0
+	- Tragically, perl 5.18 requires a leading "use re 'eval'"
+	  if you embed the program in a regex. To appease this change
+	  in behavior, the Regex attribute now supports three different
+	  "true" values:
+	   1: add a leading "use re 'eval';" for Perl 5.18+ only
+	   2: do not add a leading "use re 'eval';"
+	   3: add a leading "use re 'eval';"
+	- Updated test suite to work with new Regex attribute
+	- Updated sightly.pl to work with new Regex attribute

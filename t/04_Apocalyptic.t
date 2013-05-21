@@ -37,6 +37,7 @@ sub test_one {
    ++$itest; print "ok $itest - $e rc\n";
    $outstr eq "" or print "not ";
    ++$itest; print "ok $itest - $e output\n";
+   $prog =~ s/^.+\n// if $] >= 5.017;   # remove leading use re 'eval' line
    $prog =~ tr/\n// == $enlf or print "not ";
    ++$itest; print "ok $itest - $e nlf $enlf\n";
    $prog =~ tr/!-~/#/;

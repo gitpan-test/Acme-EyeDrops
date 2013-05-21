@@ -68,6 +68,7 @@ $prog = sightly({ Shape         => 'japh',
                   Regex         => 1 } );
 build_file('MyEye.pm', $prog);
 $prog =~ tr/!-~/#/;
+$prog =~ s/^.+\n// if $] >= 5.017;   # remove leading use re 'eval' line
 $prog eq $japhstr or print "not ";
 ++$itest; print "ok $itest - MyEye.pm shape\n";
 

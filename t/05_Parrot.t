@@ -62,6 +62,7 @@ sub test_one {
    ++$itest; print "ok $itest - $e rc\n";
    $outstr eq $ostr or print "not ";
    ++$itest; print "ok $itest - $e output\n";
+   $prog =~ s/^use re 'eval';\n// if $] >= 5.017;   # remove leading use re 'eval' line
    $prog =~ s/^.*eval.*\n\n\n//;
    $prog =~ tr/!-~/#/;
    $prog eq $sh or print "not ";
@@ -204,6 +205,7 @@ $outstr = `$^X -Tw $tmpf`;
 $rc = $? >> 8;
 $rc == 0 or print "not ";
 ++$itest; print "ok $itest - self-printing japh rc\n";
+$outstr =~ s/^.+\n// if $] >= 5.017;   # remove leading use re 'eval' line
 $outstr eq $japhstr or print "not ";
 ++$itest; print "ok $itest - self-printing japh output\n";
 
@@ -239,6 +241,7 @@ $rc == 0 or print "not ";
 ++$itest; print "ok $itest - Camel helloworld fillervar= rc\n";
 $outstr eq "hello world\n" or print "not ";
 ++$itest; print "ok $itest - Camel helloworld fillervar= output\n";
+$prog =~ s/^use re 'eval';\n// if $] >= 5.017;   # remove leading use re 'eval' line
 length($prog) eq 472 or print "not ";
 ++$itest; print "ok $itest - Camel helloworld fillervar= length\n";
 
@@ -309,7 +312,9 @@ test_one('Camel helloworld local eye file', "hello world\n", $camelstr);
 $prog = sightly({ SourceString  => $hellostr,
                   InformHandler => sub {},
                   Regex         => 1 } );
-$prog eq $baldprogstr or print "not ";
+my $prog2 = $prog;
+$prog2 =~ s/^use re 'eval';\n// if $] >= 5.017;   # remove leading use re 'eval' line
+$prog2 eq $baldprogstr or print "not ";
 ++$itest; print "ok $itest - Shapeless helloworld bald\n";
 build_file($tmpf, $prog);
 $outstr = `$^X -Tw -Mstrict $tmpf`;
@@ -318,6 +323,7 @@ $rc == 0 or print "not ";
 ++$itest; print "ok $itest - Shapeless helloworld rc\n";
 $outstr eq "hello world\n" or print "not ";
 ++$itest; print "ok $itest - Shapeless helloworld output\n";
+$prog =~ s/^use re 'eval';\n// if $] >= 5.017;   # remove leading use re 'eval' line
 $prog =~ tr/!-~/#/;
 my $nwhite = $prog =~ tr/\n //;
 $nwhite == 0 or print "not ";
